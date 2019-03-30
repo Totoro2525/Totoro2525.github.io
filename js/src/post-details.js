@@ -38,7 +38,6 @@ $(document).ready(function(){
     //Ĭ��������۵�
     $("div.fold").css("display","none");
 });
-
 $(document).ready(function () {
   var html = $('html');
   var TAB_ANIMATE_DURATION = 200;
