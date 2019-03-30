@@ -138,7 +138,7 @@
 
 
 
-  <meta name="keywords" content="Android,Service,">
+  <meta name="keywords" content="Android,Activity,">
 
 
 
@@ -151,18 +151,18 @@
 
 
 
-<meta name="description" content="我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。 1.传递简单的数据类型 从activity Aaty跳转到Baty并携带基本的数据类型 Aaty： 123Intent i ＝ new Intent(Aaty.this,Baty.cla">
-<meta name="keywords" content="Android,Service">
+<meta name="description" content="我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。">
+<meta name="keywords" content="Android,Activity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="activity－activity之间的数据传递">
 <meta property="og:url" content="https://totoro2525.github.io/2019/03/29/activity－activity之间的数据传递/index.html">
 <meta property="og:site_name" content="陳大C的个人博客">
-<meta property="og:description" content="我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。 1.传递简单的数据类型 从activity Aaty跳转到Baty并携带基本的数据类型 Aaty： 123Intent i ＝ new Intent(Aaty.this,Baty.cla">
+<meta property="og:description" content="我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-30T12:27:10.490Z">
+<meta property="og:updated_time" content="2019-03-30T12:31:55.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="activity－activity之间的数据传递">
-<meta name="twitter:description" content="我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。 1.传递简单的数据类型 从activity Aaty跳转到Baty并携带基本的数据类型 Aaty： 123Intent i ＝ new Intent(Aaty.this,Baty.cla">
+<meta name="twitter:description" content="我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。">
 
 
 
@@ -568,8 +568,7 @@
       
 
       
-        <p>我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。</p>
-<p><strong>1.传递简单的数据类型</strong></p>
+        <p>我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。<br><a id="more"></a><br><strong>1.传递简单的数据类型</strong></p>
 <p>从activity Aaty跳转到Baty并携带基本的数据类型</p>
 <p>Aaty：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent i ＝ <span class="keyword">new</span> Intent(Aaty.<span class="keyword">this</span>,Baty.class); <span class="comment">//初始化数据</span></span><br><span class="line">i.putExtra(“data”,”test”);</span><br><span class="line">startActivity(i);</span><br></pre></td></tr></table></figure>
@@ -686,7 +685,7 @@
           
             <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
           
-            <a href="/tags/Service/" rel="tag"><i class="fa fa-tag"></i> Service</a>
+            <a href="/tags/Activity/" rel="tag"><i class="fa fa-tag"></i> Activity</a>
           
         </div>
       
@@ -845,7 +844,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

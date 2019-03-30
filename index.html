@@ -775,49 +775,14 @@
 
       
         
-          
-            <p>我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。</p>
-<p><strong>1.传递简单的数据类型</strong></p>
-<p>从activity Aaty跳转到Baty并携带基本的数据类型</p>
-<p>Aaty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent i ＝ <span class="keyword">new</span> Intent(Aaty.<span class="keyword">this</span>,Baty.class); <span class="comment">//初始化数据</span></span><br><span class="line">i.putExtra(“data”,”test”);</span><br><span class="line">startActivity(i);</span><br></pre></td></tr></table></figure>
-<p>Baty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent i = getIntent(); <span class="comment">//获取数据</span></span><br><span class="line">i.getStringExtra(“data”);</span><br></pre></td></tr></table></figure>
-<p>利用Intent对象作为数据的载体。</p>
-<p><strong>2.传递数据包</strong></p>
-<p>从activity Aaty跳转到Baty并携带数据包（Bundle）</p>
-<p>Aaty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Intent i ＝ <span class="keyword">new</span> Intent(Aaty.<span class="keyword">this</span>,Baty.class);</span><br><span class="line">Bundle b = <span class="keyword">new</span> Bundle(); <span class="comment">//初始化bundle</span></span><br><span class="line">b.putString(“stringdata”,”datatest”);</span><br><span class="line">b.putInt(“intdata”,<span class="number">12</span>);</span><br><span class="line">i.putExtras(b);</span><br><span class="line">startActivity(i);</span><br></pre></td></tr></table></figure>
-<p>Baty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent i = getIntent(); <span class="comment">//获取bundle</span></span><br><span class="line">Bundle data = i.getExtras();</span><br><span class="line">data.getString(“stringdata”);</span><br><span class="line">data.getInt(“intdata”);</span><br></pre></td></tr></table></figure>
-<p><strong>3.传递值对象</strong></p>
-<p><em>（1）利用java自带的值对象序列化 java.io.Serializable</em></p>
-<p> 新建一个自定义类Human类，有两个成员变量 String类型的name和int类型的年龄</p>
-<p>   第一步：使自定义的Human类实现Serializable接口</p>
-<p>  Aaty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent i ＝ <span class="keyword">new</span> Intent(Aaty.<span class="keyword">this</span>,Baty.class);</span><br><span class="line">i.putExtra(“human”,<span class="keyword">new</span> Human(“zhangsan”,<span class="number">20</span>));</span><br><span class="line">startActivity(i);</span><br></pre></td></tr></table></figure>
-<p>Baty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Intent i = getIntent();</span><br><span class="line">Human human = (Human) i.getSerializableExtra(“human”); <span class="comment">//获取值对象</span></span><br><span class="line">user.getName(); <span class="comment">//使用对象</span></span><br></pre></td></tr></table></figure>
-<p> 特点：java自带的序列化，jvm全自动序列化，所以执行效率较低。但操作简便，代码少。</p>
-<p><em>（2）android机制的值对象序列化 android.os.Parcelable </em></p>
-<p>Aaty：</p>
-<p>第一步：同样新建自定义类Human，并且使该类实现Parcelable接口</p>
-<p>第二步：实现重写两个方法 describeContents()<br>和writeToParcel()，第一个方法不用动，用它默认的就行，主要重写第二个方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">writeToParcel(Parcel dest,<span class="keyword">int</span> flags)｛</span><br><span class="line">dest.writeString(getName());</span><br><span class="line">dest.writeInt(getAge());</span><br><span class="line">｝</span><br></pre></td></tr></table></figure>
-<p>第三步：新建一个Creator</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Creator\&lt;Human\&gt; = <span class="keyword">new</span> Creator\&lt;Human\&gt;()&#123;</span><br><span class="line">	\<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Human <span class="title">createFromParcle</span><span class="params">(Parcel source)</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Human(sourse.readString(),source.readInt());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> Human[] newArray(<span class="keyword">int</span> size)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> User[size];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;; <span class="comment">//注意这里有分号</span></span><br></pre></td></tr></table></figure>
-<p>第四步：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Intent i ＝ <span class="keyword">new</span> Intent(Aaty.<span class="keyword">this</span>,Baty.class);</span><br><span class="line">i.putExtra(“human”,<span class="keyword">new</span> Human(“zhangsan”,<span class="number">20</span>));</span><br></pre></td></tr></table></figure>
-<p>Baty：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Human human = i.getParcelableExtra(“human”); <span class="comment">//获取值对象</span></span><br><span class="line">human.getName(); <span class="comment">//使用值对象</span></span><br></pre></td></tr></table></figure>
-<p><strong>4.获取activity返回参数</strong></p>
-<p>有时候我们启动一个activity并传过去数据之后需要后者的activity做数据分析并给出返回值返回前者activity</p>
-<p>activity2:点击按钮执行：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent i = <span class="keyword">new</span> Intent();</span><br><span class="line">i.putExtra(“data”,editText.getText().toString());</span><br><span class="line">setResult(<span class="number">1</span>,i);<span class="comment">//1是传递数据的状态码(结果码)（可自定义，成功失败或失败的原因）。</span></span><br><span class="line">finish();<span class="comment">//结束当前activity并将返回值传回原activity。</span></span><br></pre></td></tr></table></figure>
-<p>activity2:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">startActivityForResult(i,<span class="number">0</span>);<span class="comment">//0是传递数据的请求码</span></span><br><span class="line">	\<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode,<span class="keyword">int</span> resultCode,Intent data)</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>.onActivityResult(requestCode, resultCode, data);</span><br><span class="line">		String s = “activity2返回的数据为”＋data.getStringExtra(“data”);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
+          <p>我们已经基本了解了android中的activity的概念、跳转、及几种启动模式，然而，在实际应用中并不会单纯的启动或跳转activity，通常是在启动一个新的activity时总要携带着各式各样的数据或数据包。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/29/activity－activity之间的数据传递/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1510,7 +1475,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
