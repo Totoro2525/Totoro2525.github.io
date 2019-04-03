@@ -138,7 +138,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Android,ContentProvider,">
 
 
 
@@ -151,16 +151,18 @@
 
 
 
-<meta name="description" content="我爱分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陳大C的个人博客">
-<meta property="og:url" content="https://totoro2525.github.io/archives/2019/index.html">
+<meta name="description" content="android 四大基本组件 的ContentProvider（内容提供者） 这个组件其实就是一个应用进行数据或数据库提供、共享其他应用获取数据的组件，其大致的结构图如下： 其中uri是一个重要的中间媒介。 联系到我们平时用的安卓程序，最常见的就是通讯录。在我们的安卓手机里，通讯录的设计其实是两个程序，其中有一个程序没有用户界面，单纯的存储着联系人信息，并且数据库结构复杂，这也是为了保证数据的安全">
+<meta name="keywords" content="Android,ContentProvider">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ContentProvider">
+<meta property="og:url" content="https://totoro2525.github.io/2019/04/03/ContentProvider/index.html">
 <meta property="og:site_name" content="陳大C的个人博客">
-<meta property="og:description" content="我爱分享">
+<meta property="og:description" content="android 四大基本组件 的ContentProvider（内容提供者） 这个组件其实就是一个应用进行数据或数据库提供、共享其他应用获取数据的组件，其大致的结构图如下： 其中uri是一个重要的中间媒介。 联系到我们平时用的安卓程序，最常见的就是通讯录。在我们的安卓手机里，通讯录的设计其实是两个程序，其中有一个程序没有用户界面，单纯的存储着联系人信息，并且数据库结构复杂，这也是为了保证数据的安全">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-03T04:14:54.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陳大C的个人博客">
-<meta name="twitter:description" content="我爱分享">
+<meta name="twitter:title" content="ContentProvider">
+<meta name="twitter:description" content="android 四大基本组件 的ContentProvider（内容提供者） 这个组件其实就是一个应用进行数据或数据库提供、共享其他应用获取数据的组件，其大致的结构图如下： 其中uri是一个重要的中间媒介。 联系到我们平时用的安卓程序，最常见的就是通讯录。在我们的安卓手机里，通讯录的设计其实是两个程序，其中有一个程序没有用户界面，单纯的存储着联系人信息，并且数据库结构复杂，这也是为了保证数据的安全">
 
 
 
@@ -190,14 +192,14 @@
 
 
 
-  <link rel="canonical" href="https://totoro2525.github.io/archives/2019/">
+  <link rel="canonical" href="https://totoro2525.github.io/2019/04/03/ContentProvider/">
 
 
 
 
 
 
-  <title>归档 | 陳大C的个人博客</title>
+  <title>ContentProvider | 陳大C的个人博客</title>
   
 
 
@@ -226,7 +228,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/Totoro2525/Totoro2525.github.io" class="github-corner" aria-label="View source on GitHub">
 	<svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
@@ -410,282 +412,343 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://totoro2525.github.io/2019/04/03/ContentProvider/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陳大C">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陳大C的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">ContentProvider</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T12:11:52+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/03/ContentProvider/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/03/ContentProvider/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2019/04/03/ContentProvider/" class="leancloud_visitors" data-flag-title="ContentProvider">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/03/ContentProvider/" itemprop="url">
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">ContentProvider</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k 字
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-03T12:11:52+08:00" content="2019-04-03">
-          04-03
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/03/BroadcastReceiver/" itemprop="url">
-              
-                <span itemprop="name">BroadcastReceiver</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-03T11:59:11+08:00" content="2019-04-03">
-          04-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <p>android 四大基本组件 的ContentProvider（内容提供者） 这个组件其实就是一个应用进行数据或数据库提供、共享其他应用获取数据的组件，其大致的结构图如下：</p>
+<p>其中uri是一个重要的中间媒介。</p>
+<p>联系到我们平时用的安卓程序，最常见的就是通讯录。在我们的安卓手机里，通讯录的设计其实是两个程序，其中有一个程序没有用户界面，单纯的存储着联系人信息，并且数据库结构复杂，这也是为了保证数据的安全。另外一个程序就是我们可以看见的通讯录程序。那么第一个程序就是一个ContentProvider，用于提供数据，而通讯录这个安卓手机内置软件，便是对ContentProvider所提供的程序进行增删改查。<br><a id="more"></a><br>如果我们想要自己写一个ContentProvider，就要自定义类去继承ContentProvider，并实现其中的方法，我们自定义的这个ContentProvider用于给其他应用或程序提供数据。这个类的具体结构和其中的方法代码如下，各个方法的含义在注释中可见：<br><div><div class="fold_hider"><div class="close hider_title">点击显/隐折叠代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.content.ContentProvider;</span><br><span class="line"><span class="keyword">import</span> android.content.ContentValues;</span><br><span class="line"><span class="keyword">import</span> android.database.Cursor;</span><br><span class="line"><span class="keyword">import</span> android.net.Uri;</span><br><span class="line"><span class="keyword">import</span> android.support.annotation.Nullable;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by lzc on 16/6/22.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyContentProvider</span> <span class="keyword">extends</span> <span class="title">ContentProvider</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;<span class="comment">//在创建ContentProvider时调用</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Cursor <span class="title">query</span><span class="params">(Uri uri, String[] strings, String s, String[] strings1, String s1)</span> </span>&#123;<span class="comment">//根据uri查询出selection制定的条件所匹配的全部纪录,并且可以指定查询那些列以什么方式(order)排序</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getType</span><span class="params">(Uri uri)</span> </span>&#123;<span class="comment">//返回当前uri的MIME类型,如果该uri对应的数据可能包括多条记录</span></span><br><span class="line">        <span class="comment">//那么MIME类型字符串就是vnd.android.dir/开头</span></span><br><span class="line">        <span class="comment">//如果该URI对应的数据只有一条记录,该MIME类型字符串就是 以vnd.android.crusor.item/开头</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Uri <span class="title">insert</span><span class="params">(Uri uri, ContentValues contentValues)</span> </span>&#123;<span class="comment">//根据uri插入Values对应的纪录</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">delete</span><span class="params">(Uri uri, String s, String[] strings)</span> </span>&#123;<span class="comment">//根据uri删除selection指定的条件所匹配的全部记录</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">update</span><span class="params">(Uri uri, ContentValues contentValues, String s, String[] strings)</span> </span>&#123;<span class="comment">//根据uri修改selection指定的条件所匹配的全部记录</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-        
+</div></div><br>这个ContentProvider在实际应用中我们不常去自己定义，更多的时候我们只是使用系统，或其他应用的ContentProvider。</p>
+<p>这里写一个简单的应用，功能是实现查看手机内的通讯录信息。<br><div><div class="fold_hider"><div class="close hider_title">点击显/隐折叠代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.content.ContentResolver;</span><br><span class="line"><span class="keyword">import</span> android.content.CursorLoader;</span><br><span class="line"><span class="keyword">import</span> android.database.Cursor;</span><br><span class="line"><span class="keyword">import</span> android.provider.ContactsContract;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"><span class="keyword">import</span> android.util.Log;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        ContentResolver cr = getContentResolver();</span><br><span class="line"></span><br><span class="line">        Cursor c = cr.query(ContactsContract.Contacts.CONTENT_URI,<span class="keyword">new</span> String[]&#123;ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME&#125;,<span class="keyword">null</span>,<span class="keyword">null</span>,<span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">if</span>(c!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(c.moveToNext())&#123;</span><br><span class="line">                <span class="keyword">int</span> id = c.getInt(c.getColumnIndex(<span class="string">"_ID"</span>));</span><br><span class="line">                System.out.println(<span class="string">"id="</span>+id);</span><br><span class="line">                String name = c.getString(c.getColumnIndex(<span class="string">"DISPLAY_NAME"</span>));</span><br><span class="line">                System.out.println(<span class="string">"name:"</span>+name);</span><br><span class="line">                 Cursor c1 = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,<span class="keyword">new</span> String[]&#123;ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.TYPE&#125;, ContactsContract.CommonDataKinds.Phone.CONTACT_ID+<span class="string">"="</span>+id,<span class="keyword">null</span>,<span class="keyword">null</span>);</span><br><span class="line">                    <span class="keyword">if</span>(c1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                        <span class="keyword">while</span> (c1.moveToNext())&#123;</span><br><span class="line">                            <span class="keyword">int</span> type = c1.getInt(c1.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE));</span><br><span class="line">                             <span class="keyword">if</span>(type == ContactsContract.CommonDataKinds.Phone.TYPE_HOME)</span><br><span class="line">                                Log.i(<span class="string">"info"</span>,<span class="string">"家庭电话:"</span>+c1.getString(c1.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));</span><br><span class="line">                             <span class="keyword">else</span>&#123;</span><br><span class="line">                                 Log.i(<span class="string">"info"</span>,<span class="string">"手机:"</span>+c1.getString(c1.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));</span><br><span class="line">                             &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                c1.close();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        c.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
+</div></div><br>注意：这里需要一个用户权限：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_CONTACTS"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在写一个简单的应用功能为在手机通讯录中插入一条信息。</p>
+<p>代码如下：<br><div><div class="fold_hider"><div class="close hider_title">点击显/隐折叠代码</div></div><div class="fold">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.content.ContentResolver;</span><br><span class="line"><span class="keyword">import</span> android.content.ContentUris;</span><br><span class="line"><span class="keyword">import</span> android.content.ContentValues;</span><br><span class="line"><span class="keyword">import</span> android.net.Uri;</span><br><span class="line"><span class="keyword">import</span> android.provider.ContactsContract;</span><br><span class="line"><span class="keyword">import</span> android.support.v7.app.AppCompatActivity;</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        ContentResolver cr = getContentResolver();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//插入一行数据</span></span><br><span class="line">        ContentValues valuse = <span class="keyword">new</span> ContentValues();</span><br><span class="line">        Uri uri = cr.insert(ContactsContract.RawContacts.CONTENT_URI,valuse);</span><br><span class="line">        Long raw_contact_id = ContentUris.parseId(uri);</span><br><span class="line">        valuse.clear();</span><br><span class="line">        <span class="comment">//插入人名</span></span><br><span class="line">        valuse.put(ContactsContract.CommonDataKinds.StructuredName.RAW_CONTACT_ID,raw_contact_id);</span><br><span class="line">        valuse.put(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME,<span class="string">"安卓入门进阶"</span>);</span><br><span class="line">        valuse.put(ContactsContract.CommonDataKinds.StructuredName.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE);</span><br><span class="line">        uri = cr.insert(ContactsContract.Data.CONTENT_URI,valuse);</span><br><span class="line">        <span class="comment">//插入电话信息</span></span><br><span class="line">        valuse.clear();</span><br><span class="line">        valuse.put(ContactsContract.CommonDataKinds.Phone.RAW_CONTACT_ID,raw_contact_id);</span><br><span class="line">        valuse.put(ContactsContract.CommonDataKinds.Phone.NUMBER,<span class="string">"131111111111"</span>);</span><br><span class="line">        valuse.put(ContactsContract.CommonDataKinds.Phone.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);</span><br><span class="line">        uri = cr.insert(ContactsContract.Data.CONTENT_URI,valuse);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/30/启动Service服务并传输数据/" itemprop="url">
-              
-                <span itemprop="name">Service启动并传输数据</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-30T13:46:43+08:00" content="2019-03-30">
-          03-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+</div></div><br>注意：需要的用户权限为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.READ_CONTACTS"</span>/&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_CONTACTS"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>一般系统提供的ContentProvider包括：</p>
+<p>－查询联系人</p>
+<p>－增加联系人</p>
+<p>－短信的读取</p>
+<p>－通话记录</p>
+<p>－多媒体 图片视频音频</p>
+<p>至此，安卓开发的四大基本组件，大结局！</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/29/activity－activity之间的数据传递/" itemprop="url">
-              
-                <span itemprop="name">activity－activity之间的数据传递</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-29T13:46:43+08:00" content="2019-03-29">
-          03-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/25/有一种悲伤/" itemprop="url">
-              
-                <span itemprop="name">比悲伤更悲伤的故事：我不能在你身边</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T22:00:24+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/25/secery/" itemprop="url">
-              
-                <span itemprop="name">My secret</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-25T20:03:57+08:00" content="2019-03-25">
-          03-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/24/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-24T23:47:54+08:00" content="2019-03-24">
-          03-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+	
+	<div>
+	
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	
+	</div>
+    
+    
+    
+	
+    
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="陳大C 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="陳大C 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    陳大C
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://totoro2525.github.io/2019/04/03/ContentProvider/" title="ContentProvider">https://totoro2525.github.io/2019/04/03/ContentProvider/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          
+            <a href="/tags/ContentProvider/" rel="tag"><i class="fa fa-tag"></i> ContentProvider</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/03/BroadcastReceiver/" rel="next" title="BroadcastReceiver">
+                <i class="fa fa-chevron-left"></i> BroadcastReceiver
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+</script>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -693,6 +756,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -994,6 +1064,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
