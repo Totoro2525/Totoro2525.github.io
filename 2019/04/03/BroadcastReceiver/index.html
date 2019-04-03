@@ -138,7 +138,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Android,Service,">
 
 
 
@@ -151,17 +151,18 @@
 
 
 
-<meta name="description" content="我爱分享">
-<meta property="og:type" content="website">
-<meta property="og:title" content="音乐">
-<meta property="og:url" content="https://totoro2525.github.io/musics/index.html">
+<meta name="description" content="广播类似于activity和service，同样是android中的基本组件。作为开发者，只需要掌握广播接受者，不必去理解其底层的机制 1.Broadcast（广播）和BroadcastReceiver（广播接受者） 广播是一种广泛运用在应用程序之间传输信息的机制。而广播接受者是对发送出来的广播进行过滤接收并相应的一类组件，它用于接收来自系统和应用中的广播 用途：开机完成系统会发出一条广播网络状态">
+<meta name="keywords" content="Android,Service">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BroadcastReceiver">
+<meta property="og:url" content="https://totoro2525.github.io/2019/04/03/BroadcastReceiver/index.html">
 <meta property="og:site_name" content="陳大C的个人博客">
-<meta property="og:description" content="我爱分享">
+<meta property="og:description" content="广播类似于activity和service，同样是android中的基本组件。作为开发者，只需要掌握广播接受者，不必去理解其底层的机制 1.Broadcast（广播）和BroadcastReceiver（广播接受者） 广播是一种广泛运用在应用程序之间传输信息的机制。而广播接受者是对发送出来的广播进行过滤接收并相应的一类组件，它用于接收来自系统和应用中的广播 用途：开机完成系统会发出一条广播网络状态">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-27T11:32:19.718Z">
+<meta property="og:updated_time" content="2019-04-03T04:02:19.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="音乐">
-<meta name="twitter:description" content="我爱分享">
+<meta name="twitter:title" content="BroadcastReceiver">
+<meta name="twitter:description" content="广播类似于activity和service，同样是android中的基本组件。作为开发者，只需要掌握广播接受者，不必去理解其底层的机制 1.Broadcast（广播）和BroadcastReceiver（广播接受者） 广播是一种广泛运用在应用程序之间传输信息的机制。而广播接受者是对发送出来的广播进行过滤接收并相应的一类组件，它用于接收来自系统和应用中的广播 用途：开机完成系统会发出一条广播网络状态">
 
 
 
@@ -191,14 +192,14 @@
 
 
 
-  <link rel="canonical" href="https://totoro2525.github.io/musics/">
+  <link rel="canonical" href="https://totoro2525.github.io/2019/04/03/BroadcastReceiver/">
 
 
 
 
 
 
-  <title>音乐 | 陳大C的个人博客</title>
+  <title>BroadcastReceiver | 陳大C的个人博客</title>
   
 
 
@@ -413,33 +414,335 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://totoro2525.github.io/2019/04/03/BroadcastReceiver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陳大C">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/my.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陳大C的个人博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">音乐</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">BroadcastReceiver</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T11:59:11+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/03/BroadcastReceiver/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/03/BroadcastReceiver/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/03/BroadcastReceiver/" class="leancloud_visitors" data-flag-title="BroadcastReceiver">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>广播类似于activity和service，同样是android中的基本组件。作为开发者，只需要掌握广播接受者，不必去理解其底层的机制</p>
+<p>1.Broadcast（广播）和BroadcastReceiver（广播接受者）</p>
+<p>广播是一种广泛运用在应用程序之间传输信息的机制。而广播接受者是对发送出来的广播进行过滤接收并相应的一类组件，它用于接收来自系统和应用中的广播</p>
+<p>用途：<br>开机完成系统会发出一条广播<br>网络状态发生改变时体统发出一条广播<br>电池电量改变时，系统发出一条广播。<br><a id="more"></a><br>2.广播接受者的生命周期</p>
+<p>广播接受者的生命周期非常短，只有大概几秒钟，因此在BroadcastReceiver里不能做一些比较耗时的操作。如果用到了比较耗时的操作，应该通过发送给Intent给Service，由Service来完成。并且需要注意的是，不能使用子线程。</p>
+<p>3.广播的种类</p>
+<p>普通广播（Normal broadcasts）：<br>所有监听该广播的广播接受者都可以接收和监听到该广播<br>特点：<br>（1）同级别接受先后是随机的（无序）。<br>（2）级别低的后收到广播。<br>（3）接收器不能阶段广播的继续传播也不能处理广播。<br>（4）同级别动态注册高于静态注册。</p>
+<p>有序广播（Ordered broadcasts）<br>按照接受者的优先级顺序接收广播，优先级别在intent-filter中的priority中声明，－1000到1000之间，值越大，优先级越高。可以终止广播意图的继续传播。接受者可以篡改内容。<br>特点：<br>（1）同界别接受顺序是随机的。<br>（2）能截断广播的继续传播，高级别的广播接收者收到该广播后，可以决定把该广播是否截断。<br>（3）接受者能截断广播的继续传播，也能处理广播。<br>（4）同级别动态注册高于静态注册。 异步广播（黏滞性滞留广播）</p>
+<p>  异步广播（黏滞性滞留广播）</p>
+<p>4.普通广播优先级详解：<br>（1）在布局中添加一个按钮，用于发送广播<br>（2）点击发送广播按钮，携带数据发送广播，发送广播的按钮中执行如下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.putExtra(<span class="string">"msg"</span>,<span class="string">"这是一条普通广播"</span>);</span><br><span class="line">intent.setAction(<span class="string">"BC_ONE"</span>);</span><br><span class="line">sendBroadcast(intent);</span><br></pre></td></tr></table></figure></p>
+<p>其中BC_ONE用于过滤器过滤到该广播，该字符串可自定义。<br>（3）新建一个类BroadcastReceiver1.java，继承BroadcastReceiver，实现方法onReceive()。<br>（4）新建一个类BroadcastReceiver2.java，继承BroadcastReceiver，实现方法onReceive()。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> android.content.BroadcastReceiver;</span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.content.Intent;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by lzc on 16/6/21.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BroadcastReceiver1</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">        String str = intent.getStringExtra(<span class="string">"msg"</span>);</span><br><span class="line">        System.out.println(<span class="string">"receiver1收到消息"</span>+str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>BroadcastReceiver2.java同理，只不过输出的是    receiver2收到消息   。<br>（4）在AndroidManifest.xml中注册广播接受者。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;receiver android:name=<span class="string">".BroadcastReceiver1"</span>&gt;</span><br><span class="line">           &lt;intent-filter</span><br><span class="line">               android:priority=<span class="string">"100"</span></span><br><span class="line">               &gt;</span><br><span class="line">               &lt;action android:name=<span class="string">"BC_ONE"</span>/&gt;</span><br><span class="line">           &lt;/intent-filter&gt;</span><br><span class="line">       &lt;/receiver&gt;</span><br><span class="line">       &lt;receiver android:name=<span class="string">".BroadcastReceiver2"</span>&gt;</span><br><span class="line">           &lt;intent-filter</span><br><span class="line">               android:priority=<span class="string">"200"</span>&gt;</span><br><span class="line">               &lt;action android:name=<span class="string">"BC_ONE"</span>/&gt;</span><br><span class="line">           &lt;/intent-filter&gt;</span><br><span class="line">       &lt;/receiver&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果filter里面不加priority属性的话，两个广播接受器应当同时接收到广播。也就是同级别接收顺序为无序。而加上priority属性，则是自定义接受器的级别，数字越大，级别越高，越先收到广播。<br>另外，在AndroidManifest.xml中注册广播接受器属于静态注册，范围为全局。<br>（5）运行以上代码，得到的结果是：<br>06-21 13:56:01.452 10108-10108/com.example.lzc.broadcast I/System.out: receiver2收到消息这是一条普通广播<br>06-21 13:56:01.462 10108-10108/com.example.lzc.broadcast I/System.out: receiver1收到消息这是一条普通广播<br>由结果可见，receiver2比receiver1先接收到广播。<br>这就是普通广播的优先级体现<br>另外，如果在receiver2中添加截断广播的方法。abortBroadcast(),并不会截断广播。因为普通广播不允许被截断。<br>（6）上面介绍了静态注册接收器，这里简单提一下动态注册，所谓动态注册，也就是在java代码中注册，有效范围是当前运行的程序。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter intentfilter = <span class="keyword">new</span> IntentFilter(<span class="string">"BC_ONE"</span>);<span class="comment">//该字符串为Action</span></span><br><span class="line">BroadcastReceiver1 bc1 = <span class="keyword">new</span> BroadcastReceiver1();</span><br><span class="line">registerReceiver(bc1,intentfilter);</span><br></pre></td></tr></table></figure></p>
+<p>5.有序广播优先级与特点：</p>
+<p>发送有序广播的方法是sendOrderedBrocast()</p>
+<p>其他操作和优先级与普通广播类似，但是我们会发现，有序广播既可以截断广播，也可以处理广播的数据，即在BroadcastReceiver2里面可以处理BroadcastReceiver1所发送的数据。（普通广播不可以处理）</p>
+<p>6.异步广播（黏滞性滞留广播）简介<br>（1）与其他两种广播形式不同的是，异步广播可以先发送广播在注册接收器。<br>（2）发送方法是：sendStickyBroadcast（intent）<br>（3）使用异步广播时需要一个用户权限<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.BROADCAST_STICKY"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
+	
+	<div>
+	
+	<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	
+	</div>
     
     
     
+	
+    
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="陳大C 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="陳大C 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    陳大C
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://totoro2525.github.io/2019/04/03/BroadcastReceiver/" title="BroadcastReceiver">https://totoro2525.github.io/2019/04/03/BroadcastReceiver/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          
+            <a href="/tags/Service/" rel="tag"><i class="fa fa-tag"></i> Service</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/30/启动Service服务并传输数据/" rel="next" title="Service启动并传输数据">
+                <i class="fa fa-chevron-left"></i> Service启动并传输数据
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+</script>
+
+      
+    </div>
   </div>
 
 
@@ -448,6 +751,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
